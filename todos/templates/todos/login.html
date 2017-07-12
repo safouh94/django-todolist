@@ -1,0 +1,51 @@
+{#{% extends 'todo/base_visitor.html' %}#}
+{#{% block title %}Log In{% endblock %}#}
+{#{% block login_active %}active{% endblock %}#}
+{#{% load staticfiles %}#}
+{##}
+{#{% block body %}#}
+{#<div class="container-fluid">#}
+{##}
+{#    <div>#}
+{#        <div>#}
+{#            <div>#}
+{#                <div>#}
+{#                    <h3>Log In</h3>#}
+{#                    {% if error_message %}#}
+{#                        <p><strong>{{ error_message }}</strong></p>#}
+{#                    {% endif %}#}
+{#                    <form role="form" action="{% url 'todo:login_user'%}" method="post">#}
+{#                        {% csrf_token %}#}
+{#                        <div>#}
+{#                            <label for="id_username">#}
+{#                                Username:#}
+{#                            </label>#}
+{#                            <div>#}
+{#                                <input id="id_username" maxlength="30" name="username" type="text">#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div>#}
+{#                            <label for="id_password">#}
+{#                                Password:#}
+{#                            </label>#}
+{#                            <div>#}
+{#                                <input id="id_password" maxlength="30" name="password" type="password">#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div>#}
+{#                            <div>#}
+{#                                <button type="submit" class="btn btn-success">Login</button>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </form>#}
+{#                </div>#}
+{#                <div class="panel-footer">#}
+{#                    Don't have an account? <a href="{% url 'todo:register' %}">Click here</a> to register.#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#</div>#}
+{##}
+{#{% endblock %}#}

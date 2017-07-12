@@ -1,0 +1,55 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'todos/style.css' %}">
+{#<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">#}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+{#    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>#}
+{#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>#}
+{#    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>#}
+
+
+<div class="container">
+    <div class="jumbotron">
+
+<h3>Title:       {{ todo.title }}</h3>
+{#<hr>#}
+{% if todo.user %}
+
+
+<h4>Description: {{ todo.text }}</h4>
+<h4>To be Completed by: {{ todo.to_be_completed }}</h4>
+<form action="{% url 'todo:achieved' todo.id%}" method="post">
+    {% csrf_token %}
+    <label>
+    {% if todo.is_achieved %}
+            <h6 class="achieved">THIS TASK HAS BEEN ACHIEVED :)</h6>
+    {% else %}
+        <h6 class="not-achieved">THIS TASK NOT ACHIEVED YET :(</h6>
+    {% endif %}
+    </label>
+{% if todo.is_achieved %}
+<input type="submit" value="Un-achieved this task">
+{% else %}
+<input type="submit" value="I achieved this task">
+{% endif %}
+</form>
+<h5>Created by {{ todo.user }}</h5>
+<form action="{% url 'todo:todo-delete' todo.id %}" method="post">
+    {% csrf_token %}
+    <button type="submit">D E L E T E</button>
+</form>
+
+<hr>
+<h5>Created At:  {{ todo.created_at }}</h5>
+
+
+{% if error_message %}
+    <p><strong>{{ error_message }}</strong></p>
+{% endif %}
+<p>
+    <a href="../">Go Back!</a>
+</p>
+
+{% else %}
+    <h1>L O L</h1>
+
+{% endif %}

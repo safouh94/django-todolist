@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+{#     <link rel="shortcut icon" type="image/png" href="{%  static 'favicon.ico' %}"/>#}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+{#    <link rel="stylesheet" type="text/css" href="{% static 'todos/style.css' %}"/>#}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+{% extends "base.html" %}
+
+
+{% load i18n %}
+
+{% block content %}
+
+<h1>{% trans 'My Account' %}</h1>
+
+<ul class="nav nav-tabs">
+  <li class="{% block account_nav_email %}{% endblock %}">
+    <a href="{% url 'account_email' %}">{% trans 'E-mail Addresses' %}</a>
+  </li>
+  <li class="{% block account_nav_change_password %}{% endblock %}">
+    <a href="{% url 'account_change_password' %}">{% trans 'Change Password' %}</a>
+  </li>
+  {% url 'socialaccount_connections' as connections_url %}
+  {% if connections_url %}
+  <li class="{% block account_nav_socialaccount_connections %}{% endblock %}">
+    <a href="{{ connections_url }}">{% trans 'Connected Accounts' %}</a>
+  </li>
+  {% endif %}
+</ul>
+{% block account_content %}
+{% endblock %}
+
+{% endblock %}
+
+</body>
+</html>
