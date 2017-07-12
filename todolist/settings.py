@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'rest_auth.registration',
 
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.github',
-    'allauth.socialaccount.providers.twitter',
+    # 'allauth.socialaccount.providers.github',
+    # 'allauth.socialaccount.providers.twitter',
 
     'bootstrapform',
 ]
