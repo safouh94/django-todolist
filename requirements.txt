@@ -39,7 +39,7 @@ Pillow==4.1.1
 pyasn1==0.1.9
 Pygments==2.1
 PyJWT==1.5.0
-pyOpenSSL==0.15.1
+pyOpenSSL==17.5.0
 PyPDF2==1.26.0
 pytz==2017.2
 PyYAML==3.11
