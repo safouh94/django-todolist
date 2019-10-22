@@ -45,7 +45,7 @@ pytz==2017.2
 PyYAML==3.11
 qrcode==5.3
 reportlab==3.4.0
-requests==2.9.1
+requests==2.20.0
 six==1.10.0
 texttable==0.8.1
 unity-lens-photos==1.0
