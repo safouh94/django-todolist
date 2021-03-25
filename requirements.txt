@@ -42,7 +42,7 @@ PyJWT==1.5.0
 pyOpenSSL==17.5.0
 PyPDF2==1.26.0
 pytz==2017.2
-PyYAML==5.1
+PyYAML==5.4
 qrcode==5.3
 reportlab==3.4.0
 requests==2.20.0
